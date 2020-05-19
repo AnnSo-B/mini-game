@@ -12,7 +12,13 @@ const App = ({ handleMovement }) => (
   <div
     className="app"
     // https://stackoverflow.com/questions/43503964/onkeydown-event-not-working-on-divs-in-react
-    onKeyDown={(event) => handleMovement(event.key)}
+    onKeyDown={
+      (event) => {
+        // prevent the page to move 
+        event.preventDefault();
+        handleMovement(event.key);
+      }
+    }
     tabIndex="0"
   >
     <Map />
