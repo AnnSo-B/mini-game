@@ -3,7 +3,7 @@ import React from 'react';
 
 // local imports
 import './styles.css';
-import Player from '../Player';
+import Player from '../../containers/Player';
 
 // component
 const App = () => (
