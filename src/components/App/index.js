@@ -2,16 +2,13 @@
 import React from 'react';
 
 // local imports
-import TestButton from 'src/containers/TestButton';
-import reactLogo from './react-logo.svg';
 import './styles.css';
+import Player from '../Player';
 
 // component
 const App = () => (
   <div className="app">
-    <h1 className="app__title">React Template</h1>
-    <img src={reactLogo} alt="react logo" />
-    <TestButton />
+    <Player />
   </div>
 );
 
