@@ -1,13 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 .app {
-  width: 500px;
+  width: 800px;
   margin: 3em auto;
-  text-align: center;
-}
-
-.app__title {
-  font-size: 3em;
-}
-
-.app img {
-  max-width: 300px;
+  position: relative;
 }

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import testButton from './testButton';
+import player from './player';
 
 export default combineReducers({
-  testButton,
+  player,
 });
