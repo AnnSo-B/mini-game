@@ -6,8 +6,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 
 // local imports
-import App from 'src/components/App';
 import store from 'src/store';
+import App from 'src/containers/App';
 
 
 // render
