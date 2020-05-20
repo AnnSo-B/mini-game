@@ -1,8 +1,10 @@
 // local imports
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from '../components/App/config';
+import tiles from '../data/mapData';
 
 // functions
-const getNextPosition = (oldPosition, direction) => {
+// determine which position we'll be next according to player's movement
+export const getNextPosition = (oldPosition, direction) => {
   let nextPosition = [];
 
   switch (direction) {
@@ -38,9 +40,23 @@ const getNextPosition = (oldPosition, direction) => {
       nextPosition = oldPosition;
       break;
   }
-  console.log(nextPosition);
   return nextPosition;
 };
 
-// export
-export default getNextPosition;
+// determine if the next tile is passable and return the position
+export const getNewPosition = (oldPosition, nextPosition) => {
+  // we need to get the coordinate corresponding to the next position
+  // the new position is a pixel size so we need to divide it by the
+  // sprite size to get the coordinate in the map
+  const nextTileX = nextPosition[0] / SPRITE_SIZE;
+  const nextTileY = nextPosition[1] / SPRITE_SIZE;
+  // we retrieve the value of this tile
+  const nextTileValue = tiles[nextTileY][nextTileX];
+  // if its value is higner than 5, it's impassable, so the player stays
+  // where he was
+  if (nextTileValue > 5) {
+    return oldPosition;
+  }
+  // otherwise he goes to the next position
+  return nextPosition;
+};
