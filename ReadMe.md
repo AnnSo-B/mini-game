@@ -19,3 +19,7 @@ Créer une carte contenant des obstacles que le personnage ne peut passer. A not
 Faire en sorte que le personnage donne l'impression de marcher dans la direction vers laquelle il se déplace.
 Ajouter le trésor, la victoire et la possibilité de recommencer la partie.
 Compter le nombre de mouvements qui ont été nécessaires à la victoire pour les indiquer à la fin de la partie.
+
+## Part 5
+
+Ajout d'une 2ème carte et possibilité de choisir soit de rejouer la carte courante soit une autre.
