@@ -60,3 +60,27 @@ export const getNewPosition = (oldPosition, nextPosition) => {
   // otherwise he goes to the next position
   return nextPosition;
 };
+
+// determine which sprite we'll be displayed next according to player's movement
+export const getSpriteLocation = (oldSpriteLocation, direction, walkIndex) => {
+  let spriteLocation = '';
+
+  switch (direction) {
+    case 'ArrowDown':
+      spriteLocation = `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 0}px`;
+      break;
+    case 'ArrowRight':
+      spriteLocation = `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 1}px`;
+      break;
+    case 'ArrowLeft':
+      spriteLocation = `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 2}px`;
+      break;
+    case 'ArrowUp':
+      spriteLocation = `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 3}px`;
+      break;
+    default:
+      spriteLocation = oldSpriteLocation;
+      break;
+  }
+  return spriteLocation;
+};
