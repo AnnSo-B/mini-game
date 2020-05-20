@@ -13,12 +13,18 @@ const Tile = ({ tile }) => {
   let image = '';
 
   switch (tile) {
+    // passable obstacles
+    case 1:
+      image = tree;
+      break;
+    // impassable obstacles
     case 6:
       image = rock;
       break;
     case 7:
       image = tree;
       break;
+    // grass by default
     default:
       image = '';
   }
