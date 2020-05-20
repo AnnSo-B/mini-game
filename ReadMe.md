@@ -17,3 +17,4 @@ Créer une carte contenant des obstacles que le personnage ne peut passer. A not
 ## Part 4
 
 Faire en sorte que le personnage donne l'impression de marcher dans la direction vers laquelle il se déplace.
+Ajouter la trésor, la victoire et la possibilité de recommencer la partie.

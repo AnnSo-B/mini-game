@@ -5,11 +5,12 @@ import PropTypes from 'prop-types';
 // local imports
 import './styles.css';
 import { MAP_WIDTH } from './config';
+import Victory from '../Victory';
 import Map from '../../containers/Map';
 import Player from '../../containers/Player';
 
 // component
-const App = ({ handleMovement }) => (
+const App = ({ victory, handleMovement }) => (
   <div
     className="app"
     // https://stackoverflow.com/questions/43503964/onkeydown-event-not-working-on-divs-in-react
@@ -33,6 +34,9 @@ const App = ({ handleMovement }) => (
       className="main"
       style={{ width: MAP_WIDTH }}
     >
+      {
+        victory && <Victory />
+      }
       <Map />
       <Player />
     </main>
@@ -41,6 +45,7 @@ const App = ({ handleMovement }) => (
 
 // Props validation
 App.propTypes = {
+  victory: PropTypes.bool.isRequired,
   handleMovement: PropTypes.func.isRequired,
 };
 
