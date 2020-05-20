@@ -7,6 +7,7 @@ import './style.css';
 import { SPRITE_SIZE } from '../App/config';
 import rock from '../../assets/images/tiles/rock.png';
 import tree from '../../assets/images/tiles/tree.png';
+import treasure from '../../assets/images/tiles/treasure.png';
 
 // component
 const Tile = ({ tile }) => {
@@ -16,6 +17,9 @@ const Tile = ({ tile }) => {
     // passable obstacles
     case 1:
       image = tree;
+      break;
+    case 2:
+      image = treasure;
       break;
     // impassable obstacles
     case 6:

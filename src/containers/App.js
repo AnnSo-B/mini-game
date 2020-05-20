@@ -6,7 +6,9 @@ import App from '../components/App';
 import { handleMovement } from '../actions';
 
 // state
-const mapStateToProps = null;
+const mapStateToProps = (state) => ({
+  victory: state.game.victory,
+});
 
 // actions
 const mapDispatchToProps = (dispatch) => ({

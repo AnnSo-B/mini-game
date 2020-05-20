@@ -44,7 +44,7 @@ export const getNextPosition = (oldPosition, direction) => {
 };
 
 // determine if the next tile is passable and return the position
-export const getNewPosition = (oldPosition, nextPosition) => {
+export const getNextTileValue = (nextPosition) => {
   // we need to get the coordinate corresponding to the next position
   // the new position is a pixel size so we need to divide it by the
   // sprite size to get the coordinate in the map
@@ -52,11 +52,40 @@ export const getNewPosition = (oldPosition, nextPosition) => {
   const nextTileY = nextPosition[1] / SPRITE_SIZE;
   // we retrieve the value of this tile
   const nextTileValue = tiles[nextTileY][nextTileX];
-  // if its value is higner than 5, it's impassable, so the player stays
-  // where he was
-  if (nextTileValue > 5) {
-    return oldPosition;
+
+  return nextTileValue;
+  // // if its value is higner than 5, it's impassable, so the player stays
+  // // where he was
+  // if (nextTileValue > 5) {
+  //   return oldPosition;
+  // }
+  // // eslint-disable-next-line no-else-return
+  // else {
+  //   // otherwise he goes to the next position
+  //   return nextPosition;
+  // }
+};
+
+// determine which sprite we'll be displayed next according to player's movement
+export const getSpriteLocation = (oldSpriteLocation, direction, walkIndex) => {
+  let spriteLocation = '';
+
+  switch (direction) {
+    case 'ArrowDown':
+      spriteLocation = `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 0}px`;
+      break;
+    case 'ArrowRight':
+      spriteLocation = `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 1}px`;
+      break;
+    case 'ArrowLeft':
+      spriteLocation = `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 2}px`;
+      break;
+    case 'ArrowUp':
+      spriteLocation = `${SPRITE_SIZE * walkIndex}px ${SPRITE_SIZE * 3}px`;
+      break;
+    default:
+      spriteLocation = oldSpriteLocation;
+      break;
   }
-  // otherwise he goes to the next position
-  return nextPosition;
+  return spriteLocation;
 };
