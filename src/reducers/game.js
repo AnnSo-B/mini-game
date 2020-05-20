@@ -7,7 +7,8 @@ import tiles from '../data/mapData';
 
 // state
 const initialState = {
-  tiles,
+  map: 0,
+  tiles: tiles[0],
   position: [0, 0],
   spriteLocation: '0px 0px',
   // direction: 'East',
@@ -23,7 +24,7 @@ export default (state = initialState, action = {}) => {
       // eslint-disable-next-line no-case-declarations
       const nextPosition = getNextPosition(state.position, action.payload);
       // eslint-disable-next-line no-case-declarations
-      const nextTileValue = getNextTileValue(nextPosition);
+      const nextTileValue = getNextTileValue(nextPosition, state.tiles);
       // eslint-disable-next-line no-case-declarations
       const newSpriteLocation = getSpriteLocation(
         state.spriteLocation,
@@ -42,8 +43,15 @@ export default (state = initialState, action = {}) => {
         victory: nextTileValue === 2,
       };
     case START_NEW_GAME:
+      // eslint-disable-next-line no-case-declarations
+      let nextMap = state.map;
+      if (action.payload.changeMap === true) {
+        nextMap = state.map + 1 < tiles.length ? state.map + 1 : 0;
+      }
       return {
         ...initialState,
+        map: nextMap,
+        tiles: tiles[nextMap],
       };
     default:
       return state;

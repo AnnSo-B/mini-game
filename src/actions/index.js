@@ -8,6 +8,7 @@ export const handleMovement = (payload) => ({
   payload,
 });
 
-export const startNewGame = () => ({
+export const startNewGame = (payload) => ({
   type: START_NEW_GAME,
+  payload,
 });

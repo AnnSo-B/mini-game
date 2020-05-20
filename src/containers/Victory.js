@@ -12,8 +12,8 @@ const mapStateToProps = (state) => ({
 
 // actions
 const mapDispatchToProps = (dispatch) => ({
-  startNewGame: () => {
-    dispatch(startNewGame());
+  startNewGame: (sameBoard) => {
+    dispatch(startNewGame(sameBoard));
   },
 });
 
