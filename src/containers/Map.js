@@ -2,15 +2,15 @@
 import { connect } from 'react-redux';
 
 // local imports
-import Player from '../components/Player';
+import Map from '../components/Map';
 
 // state
 const mapStateToProps = (state) => ({
-  playerPosition: state.game.position,
+  tiles: state.game.tiles,
 });
 
 // actions
 const mapDispatchToProps = {};
 
 // export
-export default connect(mapStateToProps, mapDispatchToProps)(Player);
+export default connect(mapStateToProps, mapDispatchToProps)(Map);

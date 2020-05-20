@@ -11,7 +11,6 @@ const mapStateToProps = null;
 // actions
 const mapDispatchToProps = (dispatch) => ({
   handleMovement: (key) => {
-    console.log(key);
     dispatch(handleMovement(key));
   },
 });
