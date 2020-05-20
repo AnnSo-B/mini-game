@@ -11,7 +11,6 @@ import Tile from './Tile';
 // component
 const MapRow = ({ tileRow }) => (
   <div
-    classNAme="row"
     style={{ height: SPRITE_SIZE }}
   >
     {
