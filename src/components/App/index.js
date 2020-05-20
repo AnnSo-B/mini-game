@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // local imports
 import './styles.css';
 import { MAP_WIDTH } from './config';
-import Victory from '../Victory';
+import Victory from '../../containers/Victory';
 import Map from '../../containers/Map';
 import Player from '../../containers/Player';
 

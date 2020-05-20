@@ -1,7 +1,7 @@
 // npm imports
 
 // local imports
-import { HANDLE_MOVEMENT } from '../actions';
+import { HANDLE_MOVEMENT, START_NEW_GAME } from '../actions';
 import { getNextPosition, getNextTileValue, getSpriteLocation } from '../functions/movementFunctions';
 import tiles from '../data/mapData';
 
@@ -37,6 +37,10 @@ export default (state = initialState, action = {}) => {
         walkIndex: state.walkIndex + 1 > 7 ? 0 : state.walkIndex + 1,
         // if the tile is the treasure, the player wins
         victory: nextTileValue === 2,
+      };
+    case START_NEW_GAME:
+      return {
+        ...initialState,
       };
     default:
       return state;
