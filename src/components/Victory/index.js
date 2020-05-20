@@ -12,9 +12,16 @@ const Victory = ({ movementCounter, startNewGame }) => (
     <button
       className="restart-button"
       type="button"
-      onClick={startNewGame}
+      onClick={() => startNewGame({ changeMap: false })}
     >
-      Pour recommencer une partie, cliquez ici.
+      Pour recommencer le même plateau.
+    </button>
+    <button
+      className="restart-button"
+      type="button"
+      onClick={() => startNewGame({ changeMap: true })}
+    >
+      Pour essayer un nouveau plateau.
     </button>
   </div>
 );

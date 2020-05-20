@@ -1,6 +1,5 @@
 // local imports
 import { SPRITE_SIZE, MAP_WIDTH, MAP_HEIGHT } from '../components/App/config';
-import tiles from '../data/mapData';
 
 // functions
 // determine which position we'll be next according to player's movement
@@ -44,7 +43,7 @@ export const getNextPosition = (oldPosition, direction) => {
 };
 
 // determine if the next tile is passable and return the position
-export const getNextTileValue = (nextPosition) => {
+export const getNextTileValue = (nextPosition, tiles) => {
   // we need to get the coordinate corresponding to the next position
   // the new position is a pixel size so we need to divide it by the
   // sprite size to get the coordinate in the map
@@ -54,16 +53,6 @@ export const getNextTileValue = (nextPosition) => {
   const nextTileValue = tiles[nextTileY][nextTileX];
 
   return nextTileValue;
-  // // if its value is higner than 5, it's impassable, so the player stays
-  // // where he was
-  // if (nextTileValue > 5) {
-  //   return oldPosition;
-  // }
-  // // eslint-disable-next-line no-else-return
-  // else {
-  //   // otherwise he goes to the next position
-  //   return nextPosition;
-  // }
 };
 
 // determine which sprite we'll be displayed next according to player's movement
