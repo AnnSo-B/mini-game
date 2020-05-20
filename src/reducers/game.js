@@ -12,6 +12,7 @@ const initialState = {
   spriteLocation: '0px 0px',
   // direction: 'East',
   walkIndex: 0,
+  movementCounter: 0,
   victory: false,
 };
 
@@ -35,6 +36,8 @@ export default (state = initialState, action = {}) => {
         spriteLocation: newSpriteLocation,
         // since we have 8 index to our sprite, when it's higher than 7, we need to go back to 0
         walkIndex: state.walkIndex + 1 > 7 ? 0 : state.walkIndex + 1,
+        // add 1 to movement counter
+        movementCounter: nextTileValue !== 2 ? state.movementCounter + 1 : state.movementCounter,
         // if the tile is the treasure, the player wins
         victory: nextTileValue === 2,
       };

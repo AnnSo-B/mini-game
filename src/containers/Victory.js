@@ -6,7 +6,9 @@ import Victory from '../components/Victory';
 import { startNewGame } from '../actions';
 
 // state
-const mapStateToProps = null;
+const mapStateToProps = (state) => ({
+  movementCounter: state.game.movementCounter,
+});
 
 // actions
 const mapDispatchToProps = (dispatch) => ({

@@ -8,6 +8,7 @@ import { MAP_WIDTH } from './config';
 import Victory from '../../containers/Victory';
 import Map from '../../containers/Map';
 import Player from '../../containers/Player';
+import Counter from '../../containers/Counter';
 
 // component
 const App = ({ victory, handleMovement }) => (
@@ -39,6 +40,9 @@ const App = ({ victory, handleMovement }) => (
       }
       <Map />
       <Player />
+      {
+        !victory && <Counter />
+      }
     </main>
   </div>
 );
