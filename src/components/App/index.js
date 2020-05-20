@@ -22,15 +22,16 @@ const App = ({ handleMovement }) => (
     }
     tabIndex="0"
   >
-    <header className="header">
+    <header
+      className="header"
+      style={{ width: MAP_WIDTH }}
+    >
       <h1 className="title">Bienvenue sur ce mini-jeu</h1>
       <p className="instructions">Vous pouvez déplacer le personnage à l'aide des flèches de votre clavier. Certains obstacles sont surmontables et d'autres non. A vous de trouver lesquels !</p>
     </header>
     <main
       className="main"
-      style={{
-        width: MAP_WIDTH,
-      }}
+      style={{ width: MAP_WIDTH }}
     >
       <Map />
       <Player />
