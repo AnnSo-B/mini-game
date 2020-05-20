@@ -2,3 +2,7 @@
   background-color: green;
   margin: o auto;
 }
+
+.tile {
+  display: inline-flex;
+}

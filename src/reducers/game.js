@@ -3,9 +3,11 @@
 // local imports
 import { HANDLE_MOVEMENT } from '../actions';
 import { SPRITE_SIZE } from '../components/App/config';
+import tiles from '../data/mapData';
 
 // state
 const initialState = {
+  tiles,
   position: [0, 0],
 };
 
