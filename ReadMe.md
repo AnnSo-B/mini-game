@@ -1,25 +1,7 @@
 # Mini-game
 
-Mini jeu dans l'esprit du RPG en React avec Redux
+Mini jeu dans l'esprit du RPG en React avec Redux.
 
-## Part 1
+![mini-game-1](mini-game-1.png)
 
-Créer le personnage et la carte, puis placer le personnage sur la carte.
-
-## Part 2
-
-Utiliser les flêches pour déplacer le personnage sur la carte.
-
-## Part 3
-
-Créer une carte contenant des obstacles que le personnage ne peut passer. A noter qu'il peut passer au travers de certains arbres.
-
-## Part 4
-
-Faire en sorte que le personnage donne l'impression de marcher dans la direction vers laquelle il se déplace.
-Ajouter le trésor, la victoire et la possibilité de recommencer la partie.
-Compter le nombre de mouvements qui ont été nécessaires à la victoire pour les indiquer à la fin de la partie.
-
-## Part 5
-
-Ajout d'une 2ème carte et possibilité de choisir soit de rejouer la carte courante soit une autre.
+![mini-game-2](mini-game-2.png)
